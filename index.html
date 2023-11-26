@@ -11,6 +11,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/config.js" defer></script>
+    <script src="./scripts/game.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -22,56 +25,75 @@
     <main>
       <aside class="modal" id="config-overlay">
         <h2>Choose your name</h2>
-        <form class="form-control">
-          <div>
+        <form>
+          <div class="form-control">
             <label for="playername">Player Name</label>
-            <input type="text" name="playername" id="playername" />
+            <input type="text" name="playername" id="playername" required />
           </div>
+          <p id="config-errors"></p>
           <div>
-            <button type="button" class="btn btn-alt">cancel</button>
-            <button type="submit" class="btn">confirm</button>
+            <button type="reset" class="btn btn-alt" id="cancel-config-btn">
+              cancel
+            </button>
+            <button type="submit" class="btn" id="confirm-config-btn">
+              confirm
+            </button>
           </div>
         </form>
       </aside>
       <section id="game-configuration">
         <ol>
           <li>
-            <acticle>
+            <acticle id="player-1-data">
               <h2>Player 1</h2>
               <h3>Player name</h3>
               <p class="player-symbol">X</p>
-              <button class="btn btn-alt">edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-1-btn"
+                data-playerid="1"
+              >
+                edit
+              </button>
             </acticle>
           </li>
           <li>
-            <acticle>
+            <acticle id="player-2-data">
               <h2>player 2</h2>
               <h3>Player name</h3>
               <p class="player-symbol">O</p>
-              <button class="btn btn-alt">edit</button>
+              <button
+                class="btn btn-alt"
+                id="edit-player-2-btn"
+                data-playerid="2"
+              >
+                edit
+              </button>
             </acticle>
           </li>
         </ol>
-        <button class="btn">start new game</button>
+        <button class="btn" id="start-game-btn">start new game</button>
       </section>
       <section id="active-game">
         <article id="game-over">
           <h2>you won <span id="winner-name">player name</span>!</h2>
           <p>click "Start New Game" above, to start new game!</p>
         </article>
-        <p>it's your turn <span id="active-player-name">player name</span>!</p>
+        <p>
+          it's your turn <span id="active-player-name">player name</span> !!
+        </p>
         <ol id="game-board">
-          <li class="disabled">X</li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
         </ol>
       </section>
     </main>

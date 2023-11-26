@@ -76,12 +76,23 @@ main {
         margin-bottom: 0.5rem;
         font-weight: 700;
       }
+
       input {
         font: inherit;
         border: 1px solid rgb(204, 204, 204);
         width: 15rem;
         padding: 0.35rem;
         margin-bottom: 1rem;
+      }
+    }
+    .error {
+      label {
+        color: rgb(136, 2, 2);
+      }
+      input {
+        border-color: rgb(136, 2, 2);
+        color: rgb(136, 2, 2);
+        background-color: rgb(253, 219, 219);
       }
     }
   }
@@ -117,7 +128,7 @@ main {
       box-shadow: 0 1px 4px rgb(0, 0, 0, 0.3);
       cursor: pointer;
       &:hover {
-        transform: scale(1.01);
+        box-shadow: 0 2px 8px rgb(0, 0, 0, 0.7);
       }
     }
     .player-symbol {
@@ -131,6 +142,7 @@ main {
   #active-game {
     text-align: center;
     margin: 2rem 0 5rem 0;
+    display: none;
 
     #game-over {
       width: 90%;
@@ -164,6 +176,7 @@ main {
       justify-content: center;
       gap: 0.5rem;
       li {
+        color: white;
         background-color: rgb(215, 187, 247);
         border-radius: 2px;
         cursor: pointer;

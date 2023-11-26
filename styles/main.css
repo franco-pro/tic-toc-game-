@@ -80,6 +80,14 @@ main #config-overlay .form-control input {
   padding: 0.35rem;
   margin-bottom: 1rem;
 }
+main #config-overlay .error label {
+  color: rgb(136, 2, 2);
+}
+main #config-overlay .error input {
+  border-color: rgb(136, 2, 2);
+  color: rgb(136, 2, 2);
+  background-color: rgb(253, 219, 219);
+}
 main #game-configuration {
   width: 90%;
   max-width: 40rem;
@@ -111,7 +119,7 @@ main #game-configuration li {
   cursor: pointer;
 }
 main #game-configuration li:hover {
-  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 main #game-configuration .player-symbol {
   font-size: 2rem;
@@ -122,6 +130,7 @@ main #game-configuration .player-symbol {
 main #active-game {
   text-align: center;
   margin: 2rem 0 5rem 0;
+  display: none;
 }
 main #active-game #game-over {
   width: 90%;
@@ -153,6 +162,7 @@ main #active-game #game-board {
   gap: 0.5rem;
 }
 main #active-game #game-board li {
+  color: white;
   background-color: rgb(215, 187, 247);
   border-radius: 2px;
   cursor: pointer;
